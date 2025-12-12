@@ -1,0 +1,89 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>AETHER | Global Chronometrics V7</title>
+    <meta name="description" content="Advanced global time tracking with analog telemetry.">
+    <link rel="stylesheet" href="style.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600&family=Space+Grotesk:wght@300;400;500;700&display=swap" rel="stylesheet">
+</head>
+<body>
+    <div class="ambient-sphere sphere-1"></div>
+    <div class="ambient-sphere sphere-2"></div>
+    <div class="noise-layer"></div>
+
+    <div class="interface">
+        <header class="glass-panel header-bar">
+            <div class="brand">
+                <div class="brand-mark"></div>
+                <h1>AETHER<span class="highlight">SYNC</span></h1>
+            </div>
+            
+            <div class="controls-group">
+                <div class="search-module">
+                    <svg class="icon-search" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5">
+                        <circle cx="11" cy="11" r="8"></circle>
+                        <line x1="21" y1="21" x2="16.65" y2="16.65"></line>
+                    </svg>
+                    <input type="text" id="globalSearch" placeholder="Locate sector... (Ctrl + K)" autocomplete="off">
+                </div>
+                <button id="formatToggle" class="toggle-btn">24H</button>
+            </div>
+        </header>
+
+        <main id="matrix" class="grid-matrix"></main>
+
+        <footer class="glass-panel footer-bar">
+            <div class="status-indicator">
+                <span class="pulse-dot"></span> System Operational
+            </div>
+            <p>Built with ❤️ & ☕ </p>
+        </footer>
+    </div>
+
+    <div id="detailModal" class="modal-overlay">
+        <div class="modal-glass">
+            <button class="close-modal">&times;</button>
+            <div class="modal-content">
+                <div class="modal-header">
+                    <div class="modal-flag"></div>
+                    <div>
+                        <h2 class="modal-city"></h2>
+                        <p class="modal-country"></p>
+                    </div>
+                </div>
+                
+                <div class="analog-wrapper">
+                    <div class="cyber-clock">
+                        <div class="hand hour-hand"></div>
+                        <div class="hand min-hand"></div>
+                        <div class="hand sec-hand"></div>
+                        <div class="center-dot"></div>
+                        <div class="clock-markers"></div>
+                    </div>
+                </div>
+
+                <div class="modal-stats">
+                    <div class="stat-box">
+                        <span class="label">Sunrise</span>
+                        <span class="value sun-rise">--:--</span>
+                    </div>
+                    <div class="stat-box">
+                        <span class="label">Local Time</span>
+                        <span class="value digital-time">--:--</span>
+                    </div>
+                    <div class="stat-box">
+                        <span class="label">Sunset</span>
+                        <span class="value sun-set">--:--</span>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+</html>
