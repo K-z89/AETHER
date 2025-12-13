@@ -3,8 +3,8 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>AETHER | Global Chronometrics V7</title>
-    <meta name="description" content="Advanced global time tracking with analog telemetry.">
+    <title>AETHER | Global Chronometrics V9</title>
+    <meta name="description" content="Global time tracking with Zen Mode & Telemetry.">
     <link rel="stylesheet" href="style.css">
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -47,15 +47,22 @@
     <div id="detailModal" class="modal-overlay">
         <div class="modal-glass">
             <button class="close-modal">&times;</button>
-            <div class="modal-content">
-                <div class="modal-header">
-                    <div class="modal-flag"></div>
-                    <div>
-                        <h2 class="modal-city"></h2>
-                        <p class="modal-country"></p>
-                    </div>
+            <button class="zen-toggle" title="Enter Zen Mode">👁️ ZEN</button>
+            
+            <div class="modal-header">
+                <div class="modal-flag"></div>
+                <div>
+                    <h2 class="modal-city"></h2>
+                    <p class="modal-country"></p>
                 </div>
-                
+            </div>
+
+            <div class="modal-tabs">
+                <button class="tab-btn active" data-target="clock-view">CLOCK</button>
+                <button class="tab-btn" data-target="calendar-view">CALENDAR</button>
+            </div>
+            
+            <div id="clock-view" class="tab-content active">
                 <div class="analog-wrapper">
                     <div class="cyber-clock">
                         <div class="hand hour-hand"></div>
@@ -65,7 +72,6 @@
                         <div class="clock-markers"></div>
                     </div>
                 </div>
-
                 <div class="modal-stats">
                     <div class="stat-box">
                         <span class="label">Sunrise</span>
@@ -81,6 +87,25 @@
                     </div>
                 </div>
             </div>
+
+            <div id="calendar-view" class="tab-content">
+                <div class="calendar-header">
+                    <span class="cal-month-year">...</span>
+                </div>
+                <div class="calendar-weekdays">
+                    <span>S</span><span>M</span><span>T</span><span>W</span><span>T</span><span>F</span><span>S</span>
+                </div>
+                <div class="calendar-grid"></div>
+            </div>
+        </div>
+    </div>
+
+    <div id="zen-overlay">
+        <div class="zen-container">
+            <div class="zen-city">TEHRAN</div>
+            <div class="zen-time">20:45</div>
+            <div class="zen-date">Friday, December 12</div>
+            <div class="zen-hint">Press ESC to exit</div>
         </div>
     </div>
 
